@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SIGN IN</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: url("https://assets.khelnow.com/news/uploads/2025/03/A-general-view-of-the-Lords-Cricket-Ground-London-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+      }
+
+      form {
+        background-color: #fff;
+        margin:fixed;
+        height:fit-content;
+        padding: 25px 30px;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        margin-top: 100px;
+        margin-bottom:100px;
+        width: 250px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #4a148c;
+      }
+
+      label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 8px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #4a148c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #6a1b9a;
+      }
+
+      a {
+        display: block;
+        margin: 10px 0;
+        color: #4a148c;
+        text-decoration: none;
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .social-buttons button {
+        background-color: darkblue;
+        color: #ccc;
+        margin-top: 8px;
+      }
+
+      .social-buttons button:hover {
+        background-color: blue;
+      }
+      span {
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="userForm" onsubmit="return validateForm()">
+      <h1>SIGN IN</h1>
+      <label for="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        placeholder="Enter your Email ..."
+        required
+      />
+
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your Password ..."
+        required
+      />
+
+      <h3>Log in or create an Account</h3>
+      <a href="forgot.html">Forgot password?</a>
+      <label><input type="checkbox" /> Remember me</label>
+
+      <button type="submit">Sign In</a>
+      </button>
+
+      <h3>Sign in with other social media account</h3>
+      <div class="social-buttons">
+        <button type="button" id="social-buttons">
+          <a href="https://accounts.google.com/signin"
+            ><span id="google">Google</span></a
+          >
+        </button>
+        <button type="button" id="social-buttons">
+          <a href="https://www.facebook.com/login"
+            ><span id="Facebook">Facebook</span></a
+          >
+        </button>
+        <button type="button" id="social-buttons">
+          <a href="https://www.instagram.com/accounts/login"
+            ><span id="Instagram">Instagram</span></a
+          >
+        </button>
+      </div>
+    </form>
+
+    <script>
+      function validateForm() {
+        event.preventDefault();
+        const pass = document.forms["userForm"]["password"].value.trim();
+        const email = document.forms["userForm"]["email"].value.trim();
+
+        if (email === "" || pass === "") {
+          alert("Email must be filled out");
+          return false;
+        }
+
+        if (pass === "") {
+          alert("Password must be filled out");
+          return false;
+        }
+
+        if (!email.includes("@")) {
+          alert("Email must contain '@'.");
+          return false;
+        }
+
+        window.location.href = "Mini-Project.html";
+        return true;
+      }
+    </script>
+  </body>
+</html>

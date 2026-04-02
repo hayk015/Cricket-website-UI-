@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cricket Fixtures</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://www.vsourz.com/wp-content/uploads/2020/03/Teamwork.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #0288d1;
+        margin-bottom: 20px;
+      }
+      .fixtures-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 60%;
+        gap: 40px;
+        margin: 50px auto;
+      }
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        position: relative;
+      }
+      .format {
+        font-size: 14px;
+        font-weight: bold;
+        color: #555;
+      }
+      .status {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #eee;
+        color: #333;
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 12px;
+      }
+      .teams {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .teams span {
+        margin: 0 10px;
+      }
+      .team-names {
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+      .details {
+        font-size: 14px;
+        color: #444;
+        margin: 8px 0;
+      }
+      .details i {
+        margin-right: 8px;
+        color: #0288d1;
+      }
+      #btn {
+        display: block;
+        width: 100%;
+        background: #7b1fa2;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-radius: 6px;
+        font-weight: bold;
+        text-decoration: none;
+        margin-top: 15px;
+      }
+      #btn:hover {
+        background: #6a0080;
+      }
+      #back,
+      #Home {
+        border-radius: 16px solid rgb(0, 83, 139);
+        color: white;
+        background-color: rgb(0, 83, 139);
+        height: 50px;
+        width: 80px;
+        float: left;
+        margin-right: 10px;
+      }
+      #next {
+        border-radius: 16px solid rgb(0, 83, 139);
+        color: white;
+        background-color: rgb(0, 83, 139);
+        height: 50px;
+        width: 80px;
+        float: right;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="back" onclick="back()">Back</button>
+    <button type="button" id="Home" onclick="Home()">HOME</button>
+    <button type="button" id="next" onclick="next()">Next >></button>
+    <h1>Upcoming International Matches</h1>
+
+    <div class="fixtures-container">
+      <div class="card">
+        <div class="format">T20I</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">IN <span>VS</span> AU</div>
+        <div class="team-names">India | Australia</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> Melbourne Cricket Ground
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 15, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 7:00 PM IST</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">ODI</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">ENG <span>VS</span> NZ</div>
+        <div class="team-names">England | New Zealand</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> Lord's Cricket Ground
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 16, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 3:00 PM GMT</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">Test</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">PK <span>VS</span> ZA</div>
+        <div class="team-names">Pakistan | South Africa</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> National Stadium, Karachi
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 18, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 10:00 AM PKT</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">ODI</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">WI <span>VS</span> BAN</div>
+        <div class="team-names">West Indies | Bangladesh</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> Kensington Oval
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 19, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 2:00 PM AST</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">T20I</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">SL <span>VS</span> AFG</div>
+        <div class="team-names">Sri Lanka | Afghanistan</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> R. Premadasa Stadium
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 20, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 6:30 PM IST</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">Test</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">AUS <span>VS</span> ENG</div>
+        <div class="team-names">Australia | England</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> Brisbane Cricket Ground
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 21, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 10:00 AM AEST</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">ODI</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">NZ <span>VS</span> IND</div>
+        <div class="team-names">New Zealand | India</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> Eden Park
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 22, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 2:00 PM NZT</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">T20I</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">SA <span>VS</span> WI</div>
+        <div class="team-names">South Africa | West Indies</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> Newlands, Cape Town
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 23, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 6:00 PM SAST</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">ODI</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">AFG <span>VS</span> BAN</div>
+        <div class="team-names">Afghanistan | Bangladesh</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> Kabul International Stadium
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 24, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 3:00 PM AFT</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+
+      <div class="card">
+        <div class="format">Test</div>
+        <div class="status">Upcoming</div>
+        <div class="teams">IND <span>VS</span> SL</div>
+        <div class="team-names">India | Sri Lanka</div>
+        <div class="details">
+          <i class="fa fa-map-marker-alt"></i> Wankhede Stadium
+        </div>
+        <div class="details"><i class="fa fa-calendar"></i> Nov 25, 2025</div>
+        <div class="details"><i class="fa fa-clock"></i> 9:30 AM IST</div>
+        <button type="button" id="btn">Reminder</button>
+      </div>
+    </div>
+
+    <script>
+      const buttons = document.querySelectorAll("#btn");
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          alert("Reminder set for this match!");
+        });
+      });
+
+      function back() {
+        window.location.href = "News.html";
+      }
+
+      function next() {
+        window.location.href = "Ranking.html";
+      }
+
+      function Home() {
+        window.location.href = "Mini-Project.html";
+      }
+    </script>
+  </body>
+</html>

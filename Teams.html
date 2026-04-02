@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ICC Team Rankings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f0f0f0; 
+        color: #111             
+      }
+      header {
+        background-color: #001f4d;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .teams-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 30px auto;
+      }
+      .team-card {
+        background-color: #e0e0e0;
+        color: #00e5ff;         
+        width: 220px;
+        height: 300px;
+        border-radius: 12px;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 40px #00e5ff; 
+        transition: all 0.3s ease;
+      }
+      .team-card:hover {
+        box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+        color: #ff00ff;
+      }
+
+      .team-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
+      .team-card h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+     #btn {
+      background-color: #00e5ff; 
+      color: black;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      border: none;
+      box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff; 
+    }
+    #btn:hover {
+      background-color: #ffea00; 
+      box-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00;
+    }
+
+      #back,
+      #Home {
+        background-color: #001f4d;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px solid rgb(47, 0, 255);
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-right: 10px;
+      }
+      footer {
+        background-color: #0288d1;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 80px;
+      }
+
+      .footer-content h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .footer-content ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>ICC Team Rankings</header>
+
+    <div class="teams-container">
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/neu91cc4x40lphf6ubgh"
+          alt="India Cricket Logo"
+        />
+        <h3>INDIA</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/h5apsohhlfsn9ydrivoe"
+          alt="Australia Cricket Logo"
+        />
+        <h3>AUSTRALIA</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/pnintojotbm9ll60cczx"
+          alt="England"
+        />
+        <h3>ENGLAND</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/iexljg3x5le23ts9xmwl"
+        />
+        <h3>PAKISTAN</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/kaefiv6vudqhj1vbqq0h"
+        />
+        <h3>SOUTH AFRICA</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/ftjoqz45fxlacmrej5oc"
+        />
+        <h3>NEW ZEALAND</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/iwjk0vb7agpa7tyhuzea"
+        />
+        <h3>AFGHANISTAN</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/jxmhkysemy0gkkmjwmct"
+        />
+        <h3>BANGLADESH</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/jb2iqj3djs8g2jbv25nm"
+        />
+        <h3>SRI LANKA</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+      <div class="team-card">
+        <img
+          src="https://images.icc-cricket.com/image/upload/t_q-best/prd/vwd5gtsu96yeq44kntsv"
+        />
+        <h3>WEST INDIES</h3>
+        <button type="button" id="btn">TEAM PROFILE</button>
+      </div>
+    </div>
+
+    <center>
+      <button type="button" id="back" onclick="back()">Back >></button>
+
+      <button type="button" id="Home" onclick="Home()">HOME</button>
+    </center>
+
+    <footer>
+      <div class="footer-content">
+        <h3>Our Sponsors</h3>
+        <ul>
+          <li>🏏 Cricket World</li>
+          <li>🎥 Sports Live</li>
+          <li>🏆 Champion Gear</li>
+          <li>📺 Match Highlights</li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      function back() {
+        window.location.href = "Ranking.html";
+      }
+
+      function Home() {
+        window.location.href = "Mini-Project.html";
+      }
+    </script>
+  </body>
+</html>

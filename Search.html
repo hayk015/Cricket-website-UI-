@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cricket Hub</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+      }
+
+      header {
+        background: #0288d1;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .search-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+      }
+
+      .search-container input {
+        width: 50%;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #0288d1;
+        border-radius: 5px;
+      }
+
+      .video-section {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        height: 300px;
+      }
+      .video-section2 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+      }
+      .video-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+        border: 1px solid grey;
+        background-color:lightgrey;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(160, 160, 200, 0.15);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(160, 160, 200, 0.25);
+}
+
+.video-card h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+      .video-card img{
+        height:60%;
+      }
+      footer {
+        background-color: #0288d1;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 80px;
+      }
+
+      .footer-content h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .footer-content ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .footer-content li {
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 12px;
+        border-radius: 5px;
+      }
+
+      img{
+        width:80%;
+        height:80%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Search Page 🔎</header>
+    <div class="search-container">
+      <input type="text" placeholder="Search What are you Looking for..." />
+    </div>
+
+    <section class="video-section">
+      <div class="video-card">
+      <img src="https://th.bing.com/th?id=OIF.JLd07Ve8FL%2fQKrzpAmgeBQ&w=322&h=181&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1"  >
+        <h3>Match Highlights</h3>
+      </div></a>
+      <div class="video-card">
+      <img src="https://th.bing.com/th/id/OIP.GznzB_LSNzMvbiFUDFCDWAHaEz?w=271&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" >
+        <h3>Top 10 Sixes</h3>
+      </div>
+      <div class="video-card" >
+      <img src="https://th.bing.com/th/id/OIP.DZdSVRDo6ZgDzDbAaVz4wwHaLH?w=119&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" >
+        <h3>Best Bowling Spells</h3>
+      </div>
+      <div class="video-card" >
+      <img src="https://assets-webp.khelnow.com/d7293de2fa93b29528da214253f1d8d0/news/uploads/2025/11/Harmanpreet-Kaur-receives-ICC-Womens-Cricket-World-Cup-trophy-from-ICC-chair-Jay-Shah-1280x805.jpg.webp" width="80%" height="80%" >
+        <h3>Women's Wc2025</h3>
+      </div>
+    </section>
+    <section class="video-section2">
+      <div class="video-card" >
+      <img src="https://th.bing.com/th/id/OIP.V3m1w6B1yUsMmRdO5OMpawHaFd?w=219&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" >
+        <h3>Champions Trophy 2025</h3>
+      </div>
+      <div class="video-card">
+        <img src="https://th.bing.com/th?id=OIF.ow0JhkANCdZjNECGei%2foFw&w=324&h=182&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1"  >
+        <h3>Test Championship 23-25</h3>
+      </div>
+      <div class="video-card">
+        <img src="https://static.theprint.in/wp-content/uploads/2023/01/U19-Womens-cricket-team-BCCI.jpg" >
+        <h3>Women's u 19 Wc</h3>
+      </div>
+      <div class="video-card" >
+        <img src="https://th.bing.com/th/id/OIP.rzR_XYetOFRVVDl0TDRbnwHaE7?w=247&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" >
+        <h3>Men's T20 Worlcup</h3>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <h3>Our Sponsors</h3>
+        <ul>
+          <li>🏏 Cricket World</li>
+          <li>🎥 Sports Live</li>
+          <li>🏆 Champion Gear</li>
+          <li>📺 Match Highlights</li>
+        </ul>
+      </div>
+    </footer>
+    <script></script>
+  </body>
+</html>
