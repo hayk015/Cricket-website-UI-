@@ -1,169 +1,207 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Cricket Hub</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f4f4f4;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Hub – Search</title>
+  <link rel="stylesheet" href="mini.css" />
+  <style>
+    body { background-color: #f4f4f4; }
 
-      header {
-        background: #0288d1;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-        font-size: 24px;
-        font-weight: bold;
-      }
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 24px 20px 10px;
+      flex-wrap: wrap;
+    }
+    .search-container input {
+      width: 50%;
+      min-width: 240px;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 2px solid #001e80;
+      border-radius: 8px;
+      outline: none;
+    }
+    .search-container input:focus { border-color: #0351c5; }
+    .search-container button {
+      padding: 12px 24px;
+      background: #001e80;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .search-container button:hover { background: #0351c5; }
 
-      .search-container {
-        display: flex;
-        justify-content: center;
-        margin: 20px;
-      }
+    .no-results {
+      text-align: center;
+      color: #555;
+      padding: 30px;
+      font-size: 16px;
+      display: none;
+    }
 
-      .search-container input {
-        width: 50%;
-        padding: 10px;
-        font-size: 16px;
-        border: 2px solid #0288d1;
-        border-radius: 5px;
-      }
+    .section-label {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 20px 0 10px;
+      color: #001e80;
+    }
 
-      .video-section {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        gap: 20px;
-        padding: 20px;
-        height: 300px;
-      }
-      .video-section2 {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        gap: 20px;
-        padding: 20px;
-      }
-      .video-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 300px;
-        padding: 20px;
-        border: 1px solid grey;
-        background-color:lightgrey;
-        border-radius: 12px;
-        box-shadow: 0 6px 12px rgba(160, 160, 200, 0.15);
-        overflow: hidden;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    /* Video cards */
+    .video-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 20px;
+    }
 
-.video-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(160, 160, 200, 0.25);
-}
+    .video-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 220px;
+      padding: 16px;
+      border: 1px solid #ccc;
+      background-color: #e8ecff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,80,0.1);
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,80,0.2);
+    }
+    .video-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .video-card h3 {
+      color: #001e80;
+      font-size: 14px;
+      margin: 0;
+    }
+    .video-card[data-hidden="true"] { display: none; }
+  </style>
+</head>
+<body>
+  <!-- Navbar injected by navbar.js -->
 
-.video-card h3 {
-  color: #333;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-      .video-card img{
-        height:60%;
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search matches, teams, players…" />
+    <button onclick="doSearch()">🔍 Search</button>
+  </div>
+
+  <p class="no-results" id="noResults">No results found. Try a different keyword.</p>
+
+  <div class="section-label">Match Highlights & Events</div>
+  <div class="video-section" id="videoGrid">
+
+    <a class="video-card" href="https://www.icc-cricket.com/tournaments" target="_blank"
+      data-tags="match highlights cricket">
+      <img src="https://th.bing.com/th?id=OIF.JLd07Ve8FL%2fQKrzpAmgeBQ&w=322&h=181&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Match Highlights" />
+      <h3>Match Highlights</h3>
+    </a>
+
+    <a class="video-card" href="https://www.icc-cricket.com" target="_blank"
+      data-tags="top sixes batting cricket">
+      <img src="https://th.bing.com/th/id/OIP.GznzB_LSNzMvbiFUDFCDWAHaEz?w=271&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Top Sixes" />
+      <h3>Top 10 Sixes</h3>
+    </a>
+
+    <a class="video-card" href="https://www.icc-cricket.com" target="_blank"
+      data-tags="bowling spells wickets">
+      <img src="https://th.bing.com/th/id/OIP.DZdSVRDo6ZgDzDbAaVz4wwHaLH?w=119&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Best Bowling Spells" />
+      <h3>Best Bowling Spells</h3>
+    </a>
+
+    <a class="video-card" href="https://www.icc-cricket.com/tournaments/womens-cricket-world-cup" target="_blank"
+      data-tags="women's wc 2025 worldcup india">
+      <img src="https://assets-webp.khelnow.com/d7293de2fa93b29528da214253f1d8d0/news/uploads/2025/11/Harmanpreet-Kaur-receives-ICC-Womens-Cricket-World-Cup-trophy-from-ICC-chair-Jay-Shah-1280x805.jpg.webp" alt="Women's WC 2025" />
+      <h3>Women's WC 2025</h3>
+    </a>
+
+    <a class="video-card" href="https://www.icc-cricket.com/tournaments/champions-trophy" target="_blank"
+      data-tags="champions trophy 2025">
+      <img src="https://th.bing.com/th/id/OIP.V3m1w6B1yUsMmRdO5OMpawHaFd?w=219&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Champions Trophy 2025" />
+      <h3>Champions Trophy 2025</h3>
+    </a>
+
+    <a class="video-card" href="https://www.icc-cricket.com/tournaments/world-test-championship" target="_blank"
+      data-tags="test championship wtc 2023 2025">
+      <img src="https://th.bing.com/th?id=OIF.ow0JhkANCdZjNECGei%2foFw&w=324&h=182&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Test Championship 23-25" />
+      <h3>Test Championship 23-25</h3>
+    </a>
+
+    <a class="video-card" href="https://www.icc-cricket.com/tournaments/u19-womens-t20-world-cup" target="_blank"
+      data-tags="women u19 under 19 worldcup">
+      <img src="https://static.theprint.in/wp-content/uploads/2023/01/U19-Womens-cricket-team-BCCI.jpg" alt="Women's U19 WC" />
+      <h3>Women's U19 WC</h3>
+    </a>
+
+    <a class="video-card" href="https://www.icc-cricket.com/tournaments/icc-mens-t20-world-cup-2024" target="_blank"
+      data-tags="men t20 worldcup 2024">
+      <img src="https://th.bing.com/th/id/OIP.rzR_XYetOFRVVDl0TDRbnwHaE7?w=247&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Men's T20 World Cup" />
+      <h3>Men's T20 World Cup 2024</h3>
+    </a>
+
+  </div>
+
+  <!-- Footer injected by navbar.js -->
+  <script src="navbar.js"></script>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+    const cards = document.querySelectorAll('.video-card');
+
+    function doSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+      if (!query) {
+        // Show all
+        cards.forEach(c => c.removeAttribute('data-hidden'));
+        noResults.style.display = 'none';
+        return;
       }
-      footer {
-        background-color: #0288d1;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-        margin-top: 80px;
+      let found = 0;
+      cards.forEach(card => {
+        const tags = card.getAttribute('data-tags') || '';
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        if (tags.includes(query) || title.includes(query)) {
+          card.removeAttribute('data-hidden');
+          card.style.display = '';
+          found++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      noResults.style.display = found === 0 ? 'block' : 'none';
+    }
+
+    // Search on Enter key
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') doSearch();
+    });
+
+    // Reset on empty input
+    searchInput.addEventListener('input', () => {
+      if (searchInput.value === '') {
+        cards.forEach(c => c.style.display = '');
+        noResults.style.display = 'none';
       }
-
-      .footer-content h3 {
-        margin-bottom: 10px;
-        font-size: 20px;
-      }
-
-      .footer-content ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .footer-content li {
-        font-size: 16px;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 8px 12px;
-        border-radius: 5px;
-      }
-
-      img{
-        width:80%;
-        height:80%;
-      }
-    </style>
-  </head>
-  <body>
-    <header>Search Page 🔎</header>
-    <div class="search-container">
-      <input type="text" placeholder="Search What are you Looking for..." />
-    </div>
-
-    <section class="video-section">
-      <div class="video-card">
-      <img src="https://th.bing.com/th?id=OIF.JLd07Ve8FL%2fQKrzpAmgeBQ&w=322&h=181&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1"  >
-        <h3>Match Highlights</h3>
-      </div></a>
-      <div class="video-card">
-      <img src="https://th.bing.com/th/id/OIP.GznzB_LSNzMvbiFUDFCDWAHaEz?w=271&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" >
-        <h3>Top 10 Sixes</h3>
-      </div>
-      <div class="video-card" >
-      <img src="https://th.bing.com/th/id/OIP.DZdSVRDo6ZgDzDbAaVz4wwHaLH?w=119&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" >
-        <h3>Best Bowling Spells</h3>
-      </div>
-      <div class="video-card" >
-      <img src="https://assets-webp.khelnow.com/d7293de2fa93b29528da214253f1d8d0/news/uploads/2025/11/Harmanpreet-Kaur-receives-ICC-Womens-Cricket-World-Cup-trophy-from-ICC-chair-Jay-Shah-1280x805.jpg.webp" width="80%" height="80%" >
-        <h3>Women's Wc2025</h3>
-      </div>
-    </section>
-    <section class="video-section2">
-      <div class="video-card" >
-      <img src="https://th.bing.com/th/id/OIP.V3m1w6B1yUsMmRdO5OMpawHaFd?w=219&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" >
-        <h3>Champions Trophy 2025</h3>
-      </div>
-      <div class="video-card">
-        <img src="https://th.bing.com/th?id=OIF.ow0JhkANCdZjNECGei%2foFw&w=324&h=182&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1"  >
-        <h3>Test Championship 23-25</h3>
-      </div>
-      <div class="video-card">
-        <img src="https://static.theprint.in/wp-content/uploads/2023/01/U19-Womens-cricket-team-BCCI.jpg" >
-        <h3>Women's u 19 Wc</h3>
-      </div>
-      <div class="video-card" >
-        <img src="https://th.bing.com/th/id/OIP.rzR_XYetOFRVVDl0TDRbnwHaE7?w=247&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" >
-        <h3>Men's T20 Worlcup</h3>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-content">
-        <h3>Our Sponsors</h3>
-        <ul>
-          <li>🏏 Cricket World</li>
-          <li>🎥 Sports Live</li>
-          <li>🏆 Champion Gear</li>
-          <li>📺 Match Highlights</li>
-        </ul>
-      </div>
-    </footer>
-    <script></script>
-  </body>
+    });
+  </script>
+</body>
 </html>

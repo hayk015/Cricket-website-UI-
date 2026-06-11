@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Hub – Register</title>
+  <link rel="stylesheet" href="mini.css" />
+  <style>
+    body {
+      background: url("https://assets.khelnow.com/news/uploads/2025/03/A-general-view-of-the-Lords-Cricket-Ground-London-scaled.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      padding: 30px 16px;
+    }
+    form {
+      background: white;
+      padding: 28px 32px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      width: 300px;
+      text-align: center;
+    }
+    h1 { color: #4a148c; font-size: 22px; margin-bottom: 18px; }
+    label { display: block; text-align: left; font-weight: bold; font-size: 13px; margin-bottom: 4px; }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-bottom: 14px;
+      box-sizing: border-box;
+    }
+    button.submit-btn {
+      width: 100%;
+      padding: 10px;
+      background: #4a148c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: background 0.2s;
+    }
+    button.submit-btn:hover { background: #6a1b9a; }
+    a.form-link { display: block; margin-top: 10px; color: #4a148c; font-size: 13px; text-decoration: none; }
+    a.form-link:hover { text-decoration: underline; }
+    .error-msg {
+      color: #c62828;
+      font-size: 12px;
+      text-align: left;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar injected by navbar.js -->
+
+  <div class="form-wrapper">
+    <form onsubmit="return handleRegister(event)">
+      <h1>CREATE ACCOUNT</h1>
+
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" placeholder="Enter your full name…" required />
+
+      <label for="regEmail">Email:</label>
+      <input type="email" id="regEmail" placeholder="Enter your email…" required />
+
+      <label for="regPassword">Password:</label>
+      <input type="password" id="regPassword" placeholder="At least 6 characters…" required />
+      <div class="error-msg" id="passError">Password must be at least 6 characters.</div>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" placeholder="Re-enter password…" required />
+      <div class="error-msg" id="matchError">Passwords do not match.</div>
+
+      <button type="submit" class="submit-btn">Register</button>
+      <a href="Signin.html" class="form-link">Already have an account? Sign In</a>
+    </form>
+  </div>
+
+  <!-- Footer injected by navbar.js -->
+  <script src="navbar.js"></script>
+  <script>
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const pass = document.getElementById('regPassword').value;
+      const confirm = document.getElementById('confirmPassword').value;
+      const passError = document.getElementById('passError');
+      const matchError = document.getElementById('matchError');
+
+      passError.style.display = 'none';
+      matchError.style.display = 'none';
+
+      if (pass.length < 6) {
+        passError.style.display = 'block';
+        return false;
+      }
+      if (pass !== confirm) {
+        matchError.style.display = 'block';
+        return false;
+      }
+
+      // Save to localStorage (demo)
+      localStorage.setItem('registered_user', JSON.stringify({ name, email }));
+      alert('Account created successfully! You can now sign in.');
+      window.location.href = 'Signin.html';
+      return false;
+    }
+  </script>
+</body>
+</html>

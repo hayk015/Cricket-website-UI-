@@ -1,384 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sports News</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #FCF6E8;
-        margin: 0;
-        padding: 20px;
-      }
-      header {
-        background-color:#001f4d;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        font-size: 28px;
-        font-weight: bold;
-      }
-      h1 {
-        background-color: #08004d;
-        border-radius: 25px;
-        margin: 0px auto;
-        color: white;
-        text-align: center;
-        width: 400px;
-        padding: 15px;
-        margin-top: 16px;
-        margin-bottom: 16px;
-      }
-      .news-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-      }
-      .news-card {
-        background: #002d80;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        height: 300px;
-        width: 400px;
-        padding: 10px;
-      }
-      .news-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-      .news-content {
-        padding: 10px;
-        color: white;
-        font-weight: bold;
-      }
-      .news-category {
-        font-size: 12px;
-        color: #555;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-      .news-title {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #ccc;
-      }
-      .news-time {
-        font-size: 12px;
-        color: #888;
-        font-weight: bold;
-      }
-      footer {
-        background-color: #0288d1;
-        color: white;
-        text-align: center;
-        width: 1800px;
-        padding: 20px 0;
-        margin-top: 80px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Hub – News</title>
+  <link rel="stylesheet" href="mini.css" />
+  <style>
+    body { background-color: #f4f6ff; }
+    .page-wrapper { padding: 20px; }
+    h1.news-page-title {
+      background-color: #08004d;
+      border-radius: 25px;
+      margin: 16px auto;
+      color: white;
+      text-align: center;
+      width: fit-content;
+      padding: 12px 32px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar injected by navbar.js -->
 
-      .footer-content h3 {
-        margin-bottom: 10px;
-        font-size: 20px;
-      }
-
-      .footer-content ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-      }
-      #back,#next{
-        margin-top:10px;
-        border-radius:16px solid blue;
-        color: black;
-        background-color:rgba(0, 0, 255, 0.1);
-        height: 50px;
-        width: 80px;
-        float: left;
-        margin-right: 10px;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <div>
-    <header>Sports News Portal</header>
-    <button type="button" id="back" onclick="back()" style="float:right;margin-left:auto;">Back <<</button>
-    <button type="button" id="next" onclick="next()" atyle="float:left;margin-right:auto;">Next >></button>
-
-    <h1>Latest Sports News</h1>
+  <div class="page-wrapper">
+    <h1 class="news-page-title">Latest Sports News</h1>
     <div class="news-grid">
-      <!-- Card 1 -->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/e4cqkiqxp62kzrl6jv0n"
-          alt="News 1"
-        />
+
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/e4cqkiqxp62kzrl6jv0n" alt="News 1" />
         <div class="news-content">
           <div class="news-category">News</div>
-          <div class="news-title">
-            BCCI provides latest update on Gill injury
-          </div>
+          <div class="news-title">BCCI provides latest update on Gill injury</div>
           <div class="news-time">7h</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 2 -->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/k5deoclckecfgybx4xa9"
-          alt="News 2"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/k5deoclckecfgybx4xa9" alt="News 2" />
         <div class="news-content">
-          <div class="news-category">
-            ICC Women’s Emerging Nations Trophy, 2025
-          </div>
-          <div class="news-title">
-            Inaugural ICC Women’s Emerging Nations Trophy announced
-          </div>
+          <div class="news-category">ICC Women's Emerging Nations Trophy, 2025</div>
+          <div class="news-title">Inaugural ICC Women's Emerging Nations Trophy announced</div>
           <div class="news-time">8h</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 3 -->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/fng83zekfletiolgo9rw"
-          alt="News 3"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/fng83zekfletiolgo9rw" alt="News 3" />
         <div class="news-content">
           <div class="news-category">ICC World Test Championship</div>
-          <div class="news-title">
-            Australia dealt massive injury blow ahead of Ashes opener
-          </div>
+          <div class="news-title">Australia dealt massive injury blow ahead of Ashes opener</div>
           <div class="news-time">10h</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 4 -->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/zrzvxv4q8mc3fy8lhj1t"
-          alt="News 4"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/zrzvxv4q8mc3fy8lhj1t" alt="News 4" />
         <div class="news-content">
           <div class="news-category">ICC World Test Championship</div>
-          <div class="news-title">
-            Rabada out as India reveal selection shock for first Test
-          </div>
+          <div class="news-title">Rabada out as India reveal selection shock for first Test</div>
           <div class="news-time">1d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 5 -->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/b3czdpcf3ixlddsy2dfs"
-          alt="News 5"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/b3czdpcf3ixlddsy2dfs" alt="News 5" />
         <div class="news-content">
           <div class="news-category">ICC World Test Championship</div>
-          <div class="news-title">
-            Gill weighs in on WTC stakes and Shami’s absence for India
-          </div>
+          <div class="news-title">Gill weighs in on WTC stakes and Shami's absence for India</div>
           <div class="news-time">2d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 6 -->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/zndffvndepkojsmqbhw2"
-          alt="News 6"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/zndffvndepkojsmqbhw2" alt="News 6" />
         <div class="news-content">
           <div class="news-category">ICC World Test Championship</div>
-          <div class="news-title">
-            Fitness concerns for England speedster ahead of Ashes
-          </div>
+          <div class="news-title">Fitness concerns for England speedster ahead of Ashes</div>
           <div class="news-time">2d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 7-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/znpvczoi8bkvkyqlvu2w"
-          alt="News 7"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/znpvczoi8bkvkyqlvu2w" alt="News 7" />
         <div class="news-content">
           <div class="news-category">ODI</div>
-          <div class="news-title">
-            Big batting shuffle in West Indies squad for New Zealand ODIs
-          </div>
+          <div class="news-title">Big batting shuffle in West Indies squad for New Zealand ODIs</div>
           <div class="news-time">2d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 8-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/uie5aovma6q2lbz8fsn2"
-          alt="News 8"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/uie5aovma6q2lbz8fsn2" alt="News 8" />
         <div class="news-content">
-          <div class="news-category">ICC Women's Worlcup 2026</div>
-          <div class="news-title">
-            After CWC25 win, Deepti and India shift focus to T20WC 2026
-          </div>
+          <div class="news-category">ICC Women's World Cup 2026</div>
+          <div class="news-title">After CWC25 win, Deepti and India shift focus to T20WC 2026</div>
           <div class="news-time">3d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 9-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/gnoyegpcis8afuchpshi"
-          alt="News 9"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/gnoyegpcis8afuchpshi" alt="News 9" />
         <div class="news-content">
-          <div class="news-category">ICC Mem's T20 WC 2026</div>
-          <div class="news-title">
-            New Zealand star won't rush return ahead of T20 World Cup
-          </div>
+          <div class="news-category">ICC Men's T20 WC 2026</div>
+          <div class="news-title">New Zealand star won't rush return ahead of T20 World Cup</div>
           <div class="news-time">2d</div>
         </div>
-      </div>
+      </a>
 
-
-       <!-- Card 10-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/wwauluwjbrdowhehht17"
-          alt="News 10"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/wwauluwjbrdowhehht17" alt="News 10" />
         <div class="news-content">
           <div class="news-category">News</div>
-          <div class="news-title">
-            ICC Women’s Player of the Month for October 2025 revealed
-          </div>
+          <div class="news-title">ICC Women's Player of the Month for October 2025 revealed</div>
           <div class="news-time">3d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 11-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/amvmmizkndg7bav5sfjt"
-          alt="News 11"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/amvmmizkndg7bav5sfjt" alt="News 11" />
         <div class="news-content">
           <div class="news-category">News</div>
-          <div class="news-title">
-            ICC Men’s Player of the Month for October 2025 unveiled
-          </div>
+          <div class="news-title">ICC Men's Player of the Month for October 2025 unveiled</div>
           <div class="news-time">3d</div>
         </div>
-      </div>
-      
-      <!-- Card 12-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/trmhw3stww4kxxgvrxvm"
-          alt="News 12"
-        />
+      </a>
+
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/trmhw3stww4kxxgvrxvm" alt="News 12" />
         <div class="news-content">
           <div class="news-category">ICC World Test Championship</div>
-          <div class="news-title">
-            Australia issue update on Hazlewood, Abbott injuries 
-          </div>
+          <div class="news-title">Australia issue update on Hazlewood, Abbott injuries</div>
           <div class="news-time">3d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 13-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/jr7g1h5lvpies7wlajhi"
-          alt="News 13"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/jr7g1h5lvpies7wlajhi" alt="News 13" />
         <div class="news-content">
           <div class="news-category">ICC World Test Championship</div>
-          <div class="news-title">
-            England coach backs Root to break century drought Down Underh
-          </div>
+          <div class="news-title">England coach backs Root to break century drought Down Under</div>
           <div class="news-time">4d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 14-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/w9ejsyfmi2yxm5bkfr3k"
-          alt="News 14"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/w9ejsyfmi2yxm5bkfr3k" alt="News 14" />
         <div class="news-content">
           <div class="news-category">ICC World Test Championship</div>
-          <div class="news-title">
-            Australia stars find sweet spot ahead of Ashes
-          </div>
+          <div class="news-title">Australia stars find sweet spot ahead of Ashes</div>
           <div class="news-time">4d</div>
         </div>
-      </div>
+      </a>
 
-
-      <!-- Card 15-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/z4zepvhjnrgtza1soyip"
-          alt="News 15"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/z4zepvhjnrgtza1soyip" alt="News 15" />
         <div class="news-content">
           <div class="news-category">ICC World Test Championship</div>
-          <div class="news-title">
-            Stokes switches to ‘beast mode’ ahead of much-awaited Ashes
-          </div>
+          <div class="news-title">Stokes switches to 'beast mode' ahead of much-awaited Ashes</div>
           <div class="news-time">5d</div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 16-->
-      <div class="news-card">
-        <img
-          src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/mc7cb6qsvdvdqfdemahf"
-          alt="News 15"
-        />
+      <a class="news-card" href="https://www.icc-cricket.com/news" target="_blank">
+        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size60-webp/prd/mc7cb6qsvdvdqfdemahf" alt="News 16" />
         <div class="news-content">
           <div class="news-category">T20I</div>
-          <div class="news-title">
-            Gambhir wants India to stay ahead in T20Is
-          </div>
+          <div class="news-title">Gambhir wants India to stay ahead in T20Is</div>
           <div class="news-time">5d</div>
         </div>
-      </div><br>
+      </a>
 
-    <footer>
-        <div class="footer-content">
-        <h3>Our Sponsors</h3>
-        <ul>
-          <li>🏏 Cricket World</li>
-          <li>🎥 Sports Live</li>
-          <li>🏆 Champion Gear</li>
-          <li>📺 Match Highlights</li>
-        </ul>
-      </div>
-    </footer>
+    </div><!-- end .news-grid -->
+  </div><!-- end .page-wrapper -->
 
-    <script>
-        function back() {
-        window.location.href = "Mini-Project.html";
-      }
-
-      function next(){
-        window.location.href= "Fixtures.html";
-      }
-    </script>
-
-  </body>
+  <!-- Footer injected by navbar.js -->
+  <script src="navbar.js"></script>
+</body>
 </html>

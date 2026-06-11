@@ -1,402 +1,334 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Men's Team Rankings</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: whitesmoke;
-        margin: 0;
-        padding: 20px;
-    }
-    #head{
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Hub – Rankings</title>
+  <link rel="stylesheet" href="mini.css" />
+  <style>
+    body { background-color: whitesmoke; }
+    #head {
       background-color: #003366;
-      color:white;
+      color: white;
       font-weight: bold;
       text-align: center;
-      height:80px;
-      width:100%;
-      font-size:50px;
+      padding: 20px;
+      font-size: 40px;
     }
     h1 {
-        text-align: center;
-        color: #003366;
-        margin-bottom: 20px;
+      text-align: center;
+      color: #003366;
+      margin: 28px 0 16px;
     }
     .ranking-container {
-         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 16px 10px;
     }
     .ranking-card {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        overflow: hidden;
-        width:300px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 300px;
     }
     .ranking-header {
-        font-size: 16px;
-        font-weight: bold;
-        padding: 10px;
-        border-bottom: 3px solid #00a651; 
+      font-size: 15px;
+      font-weight: bold;
+      padding: 10px;
+      border-bottom: 3px solid #00a651;
+      background: #f9f9f9;
     }
-    .ranking-header.odi {
-        border-bottom-color: #00a6d6;
-
-    }
-    .ranking-header.t20 {
-        border-bottom-color: #e6007e; 
-    }
+    .ranking-header.odi { border-bottom-color: #00a6d6; }
+    .ranking-header.t20 { border-bottom-color: #e6007e; }
     .ranking-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
     .ranking-list li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        border-bottom: 1px solid #eee;
-        font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
     }
+    .ranking-list li:last-child { border-bottom: none; }
     .team-info {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .team-info img {
-        width: 24px;
-        height: 16px;
+      width: 24px;
+      height: 16px;
+      object-fit: contain;
     }
-    #player-info img{
-        width:80px;
-        height: 100px;
+    .player-photo {
+      text-align: center;
     }
-    #player-info {
-        margin-left:5px;
-        text-align: center;
+    .player-photo img {
+      width: 60px;
+      height: 75px;
+      object-fit: cover;
+      border-radius: 4px;
     }
-    #back,#home{
-        margin-top:10px;
-        margin-left:10px;
-        border-radius: 16px solid rgb(0, 83, 139);
-        color: white;
-        background-color:lightblue;
-        height: 50px;
-        width: 80px;
-        float: left;
-        margin-right: 10px;
-        font-weight: bold;
-      }
-</style>
+    .player-photo p { margin: 2px 0 0; font-weight: bold; font-size: 13px; }
+
+    @media (max-width: 680px) {
+      .ranking-card { width: 90vw; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Navbar injected by navbar.js -->
 
-<header id="head">
-  ICC Rankings
-</header>
+  <header id="head">ICC Rankings</header>
 
-<h1>Men's Team Rankings</h1>
-<div class="ranking-container">
-    <!-- Test Rankings -->
+  <!-- ===== MEN'S TEAM ===== -->
+  <h1>Men's Team Rankings</h1>
+  <div class="ranking-container">
     <div class="ranking-card">
-        <div class="ranking-header">TEST - TEAM RANKINGS</div>
-        <ul class="ranking-list">
-            <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8">AUSTRALIA</div><span>124</span></li>
-            <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8"> ENGLAND</div><span>112</span></li>
-            <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8">SOUTH AFRICA</div><span>111</span></li>
-            <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8"> INDIA</div><span>108</span></li>
-            <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8"> NEW ZEALAND</div><span>96</span></li>
-        </ul>
+      <div class="ranking-header">TEST – TEAM RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8" alt="AUS">AUSTRALIA</div><span>124</span></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="ENG">ENGLAND</div><span>112</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8" alt="SA">SOUTH AFRICA</div><span>111</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="IND">INDIA</div><span>108</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8" alt="NZ">NEW ZEALAND</div><span>96</span></li>
+      </ul>
     </div>
-
-    <!-- ODI Rankings -->
     <div class="ranking-card">
-        <div class="ranking-header odi">ODI - TEAM RANKINGS</div>
-        <ul class="ranking-list">
-            <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8"> INDIA</div><span>122</span></li>
-            <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8"> NEW ZEALAND</div><span>111</span></li>
-            <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8">AUSTRALIA</div><span>109</span></li>
-            <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/6.png?v=8">PAKISTAN</div><span>104</span></li>
-            <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/8.png?v=8">SRI LANKA </div>101</span></li>
-        </ul>
+      <div class="ranking-header odi">ODI – TEAM RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="IND">INDIA</div><span>122</span></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8" alt="NZ">NEW ZEALAND</div><span>111</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8" alt="AUS">AUSTRALIA</div><span>109</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/6.png?v=8" alt="PAK">PAKISTAN</div><span>104</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/8.png?v=8" alt="SL">SRI LANKA</div><span>101</span></li>
+      </ul>
     </div>
-
-    <!-- T20 Rankings -->
     <div class="ranking-card">
-        <div class="ranking-header t20">T20 - TEAM RANKINGS</div>
-        <ul class="ranking-list">
-            <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8"> INDIA</div><span>272</span></li>
-            <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8"> AUSTRALIA</div><span>267</span></li>
-            <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8"> ENGLAND</div><span>258</span></li>
-            <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8"> NEW ZEALAND</div><span>251</span></li>
-            <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8">SOUTH AFRICA</div><span>240</span></li>
-        </ul>
+      <div class="ranking-header t20">T20 – TEAM RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="IND">INDIA</div><span>272</span></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8" alt="AUS">AUSTRALIA</div><span>267</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="ENG">ENGLAND</div><span>258</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8" alt="NZ">NEW ZEALAND</div><span>251</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8" alt="SA">SOUTH AFRICA</div><span>240</span></li>
+      </ul>
     </div>
-</div>
-
-<h1>Men's Batting Rankings</h1>
-<div class="ranking-container">
- <div class="ranking-card">
-  <div class="ranking-header ">TEST - Batting RANKINGS</div>
-    <ul class="ranking-list">
-      <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8">Joe Root</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/10129.png" ><p>908</p></span></li>
-      <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8">Harry Brook</div><span>868</span></li>
-      <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8">Kane  Williamson</div><span>850</span></li>
-      <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8">Steve Smith</div><span>816</span></li>
-      <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Yashasvi Jaiswal</div><span>791</span></li>
-    </ul>
- </div>
-
-
-   <div class="ranking-card">
-    <div class="ranking-header odi">ODI - Batting RANKINGS</div>
-    <ul class="ranking-list">
-      <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Rohit Sharma</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/3852.png"><p>781</p></span></li>
-      <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8">Ibrahim Zadran</div><span>764</span></li>
-      <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8">Daryl Mitchell</div><span>746</span></li>
-      <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Shubman Gill</div><span>745</span></li>
-      <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Virat Kohli</div><span>725</span></li>
-    </ul>
-</div>
-
-    
-   <div class="ranking-card">
-  <div class="ranking-header t20">T20 - Batting RANKINGS</div>
-    <ul class="ranking-list ">
-      <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Abhishek
-Sharma</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/66799.png"><p>920</p></span></li>
-      <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8">Phil Salt</div><span>849</span></li>
-      <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/8.png?v=8">Pathum Nissanka</div><span>779</span></li>
-      <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8">Jos Buttler</div><span>770</span></li>
-      <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Tilak Varma</div><span>761</span></li>
-    </ul>
   </div>
 
-</div>
-
-
-<h1>Men's Bowling Rankings</h1>
-<div class="ranking-container">
-    <!--Test-->
+  <!-- ===== MEN'S BATTING ===== -->
+  <h1>Men's Batting Rankings</h1>
+  <div class="ranking-container">
     <div class="ranking-card">
-        <div class="ranking-header">Test - Bowling RANKINGS</div>
-        <ul class ="ranking-list">
-            <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Jasprit
-Bumrah</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/63755.png"><p>882</p></span></li>
-            <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8">Matt Henry</div><span>846</span></li>
-            <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/6.png?v=8">Noman Ali</div><span>843</span></li>
-            <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8">Pat Cummins</div><span>838</span></li>
-            <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8">Kagiso Rabada</div><span>823</span></li>
-        </ul>
+      <div class="ranking-header">TEST – BATTING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="">Joe Root</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/10129.png" alt="Root"><p>908</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="">Harry Brook</div><span>868</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8" alt="">Kane Williamson</div><span>850</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8" alt="">Steve Smith</div><span>816</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Yashasvi Jaiswal</div><span>791</span></li>
+      </ul>
     </div>
-
-    <!--ODI-->
     <div class="ranking-card">
-        <div class="ranking-header odi">ODI - Bowling RANKINGS</div>
-        <ul class ="ranking-list">
-            <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8">Rashid
-Khan</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/65748.png"><p>710</p></span></li>
-            <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8">Jofra Archer</div><span>670</span></li>
-            <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8">Keshav Maharaj</div><span>660</span></li>
-            <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/8.png?v=8">Maheesh
-Theekshana</div><span>650</span></li>
-            <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/20.png?v=8">Bernard Scholtz</div><span>645</span></li>
-        </ul>
+      <div class="ranking-header odi">ODI – BATTING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Rohit Sharma</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/3852.png" alt="Rohit"><p>781</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8" alt="">Ibrahim Zadran</div><span>764</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8" alt="">Daryl Mitchell</div><span>746</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Shubman Gill</div><span>745</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Virat Kohli</div><span>725</span></li>
+      </ul>
     </div>
-
-    <!--T20-->
     <div class="ranking-card">
-        <div class="ranking-header t20">T20 - Bowling RANKINGS</div>
-        <ul class ="ranking-list">
-            <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Varun
-Chakaravarthy</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/67469.png"><p>780</p></span></li>
-            <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8">Rashid
-Khan</div><span>701</span></li>
-            <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8">Jacob
-Duffy</div><span>694</span></li>
-            <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/8.png?v=8">Wanindu Hasaranga</div><span>687</span></li>
-            <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8">Adil Rashid</div><span>686</span></li>
-        </ul>
+      <div class="ranking-header t20">T20 – BATTING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Abhishek Sharma</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/66799.png" alt="Abhishek"><p>920</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="">Phil Salt</div><span>849</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/8.png?v=8" alt="">Pathum Nissanka</div><span>779</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="">Jos Buttler</div><span>770</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Tilak Varma</div><span>761</span></li>
+      </ul>
     </div>
-</div>
+  </div>
 
-<h1>Men's Allrounder Rankings</h1>
-<div class="ranking-container">
-    <!--Test-->
+  <!-- ===== MEN'S BOWLING ===== -->
+  <h1>Men's Bowling Rankings</h1>
+  <div class="ranking-container">
     <div class="ranking-card">
-    <div class="ranking-header">TEST - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Ravindra
-Jadeja</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/3850.png"><p>406</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/2.png?v=8">Mehidy
-Hasan Miraz</div><span>305</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8">Ben Stokes</div><span>295</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8">Pat
-Cummins</div><span>270</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8">Wiaan Mulder</div><span>253</span></li>
-    </ul>
+      <div class="ranking-header">TEST – BOWLING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Jasprit Bumrah</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/63755.png" alt="Bumrah"><p>882</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8" alt="">Matt Henry</div><span>846</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/6.png?v=8" alt="">Noman Ali</div><span>843</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8" alt="">Pat Cummins</div><span>838</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8" alt="">Kagiso Rabada</div><span>823</span></li>
+      </ul>
     </div>
-
-<!--ODI-->
-<div class="ranking-card">
-    <div class="ranking-header odi">ODI - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8">Azmatullah
-Omarzai</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/67516.png"><p>334</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/10.png?v=8">Sikandar Raza</div><span>302</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8">Mohammad Nabi</div><span>285</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/2.png?v=8">Mehidy
-Hasan Miraz</div><span>273</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8">Rashid Khan</div><span>257</span></li>
-    </ul>
-    </div>
-
-    <!--T20-->
     <div class="ranking-card">
-    <div class="ranking-header t20">T20 - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/6.png?v=8">Saim
-Ayub</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/70241.png"><p>269</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/10.png?v=8">Sikandar Raza</div><span>251</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/9.png?v=8">Roston Chase</div><span>241</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8">Mohammad Nabi</div><span>217</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8">Hardik Pandya</div><span>211</span></li>
-    </ul>
+      <div class="ranking-header odi">ODI – BOWLING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Jasprit Bumrah</div><span>692</span></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="">Jofra Archer</div><span>670</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8" alt="">Keshav Maharaj</div><span>660</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/8.png?v=8" alt="">Maheesh Theekshana</div><span>650</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/20.png?v=8" alt="">Bernard Scholtz</div><span>645</span></li>
+      </ul>
     </div>
-</div>
-
-<h1>Women's Team Rankings</h1>
-<div class="ranking-container">
-<!--ODI-->
-<div class="ranking-card">
-    <div class="ranking-header odi">ODI - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">AUSTRALIA</div><span>163</span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8">ENGLAND</div><span>126</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8">INDIA</div><span>126</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8">SOUTH AFRICA</div><span>99</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1129.png?v=8">NEWZLAND</div><span>93</span></li>
-    </ul>
-</div>
-
-    <!--T20-->
     <div class="ranking-card">
-    <div class="ranking-header t20">T20 - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">AUSTRALIA</div><span>299</span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8">ENGLAND</div><span>277</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8">INDIA</div><span></span>263</li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1129.png?v=8">NEWZLAND</div><span></span>253</li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8">SOUTH AFRICA</div><span>241</span></li>
-    </ul>
+      <div class="ranking-header t20">T20 – BOWLING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Varun Chakaravarthy</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/67469.png" alt="Varun"><p>780</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8" alt="">Rashid Khan</div><span>701</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/5.png?v=8" alt="">Jacob Duffy</div><span>694</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/8.png?v=8" alt="">Wanindu Hasaranga</div><span>687</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="">Adil Rashid</div><span>686</span></li>
+      </ul>
     </div>
-</div>
-  
-<h1>Women's Batting Rankings</h1>
-<div class="ranking-container">
-<!--ODI-->
-<div class="ranking-card">
-    <div class="ranking-header odi">ODI - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8">Laura
-Wolvaardt</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/66176.png"><p>814</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8">Smriti Mandhana</div><span>811</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Ashleigh Gardner</div><span>738</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8">Nat Sciver-Brunt</div><span>714</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Beth Mooney</div><span>700</span></li>
-    </ul>
-</div>
+  </div>
 
-    <!--T20-->
+  <!-- ===== MEN'S ALLROUNDER ===== -->
+  <h1>Men's Allrounder Rankings</h1>
+  <div class="ranking-container">
     <div class="ranking-card">
-    <div class="ranking-header t20">T20 - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Beth Mooney</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/64853.png"><p>794</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1135.png?v=8">Hayley Matthews</div><span>774</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8">Smriti Mandhana</div><span>767</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Tahlia McGrath</div><span>757</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8">Laura
-Wolvaardt</div><span></span></li>
-    </ul>
+      <div class="ranking-header">TEST – ALLROUNDER RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Ravindra Jadeja</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/3850.png" alt="Jadeja"><p>406</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/2.png?v=8" alt="">Mehidy Hasan Miraz</div><span>305</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/3.png?v=8" alt="">Ben Stokes</div><span>295</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1.png?v=8" alt="">Pat Cummins</div><span>270</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/7.png?v=8" alt="">Wiaan Mulder</div><span>253</span></li>
+      </ul>
     </div>
-</div>
-
-<h1>Women's Bowling Rankings</h1>
-<div class="ranking-container">
-<!--ODI-->
-<div class="ranking-card">
-    <div class="ranking-header odi">ODI - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8">Sophie
-Ecclestone</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/66391.png"><p>747</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8">Marizanne Kapp</div><span>712</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Alana King</div><span>695</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Ashleigh Gardner</div><span>675</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8">Deepti Sharma</div><span>657</span></li>
-    </ul>
-    </div>
-
-    <!--T20-->
     <div class="ranking-card">
-    <div class="ranking-header t20">T20 - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Annabel
-Sutherland</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/67045.png"><p>736</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8">Deepti Sharma</div><span>732</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1130.png?v=8">Sadia Iqbal</div><span>732</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8">Sophie
-Ecclestone</div><span>727</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8">Lauren Bell</div><span>714</span></li>
-    </ul>
+      <div class="ranking-header odi">ODI – ALLROUNDER RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8" alt="">Azmatullah Omarzai</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/67516.png" alt="Omarzai"><p>334</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/10.png?v=8" alt="">Sikandar Raza</div><span>302</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8" alt="">Mohammad Nabi</div><span>285</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/2.png?v=8" alt="">Mehidy Hasan Miraz</div><span>273</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8" alt="">Rashid Khan</div><span>257</span></li>
+      </ul>
     </div>
-</div>
-
-<h1>Women's Allrounder Rankings</h1>
-<div class="ranking-container">
-<!--ODI-->
-<div class="ranking-card">
-    <div class="ranking-header odi">ODI - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Ashleigh Gardner</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/67023.png"><p>498</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8">Marizanne Kapp</div><span>441</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1135.png?v=8">Hayley Matthews</div><span>420</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8">Deepti Sharma</div><span>392</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Annabel
-Sutherland</div><span>388</span></li>
-    </ul>
-    </div>
-
-    <!--T20-->
     <div class="ranking-card">
-    <div class="ranking-header t20">T20 - Allrounder RANKINGS</div>
-    <ul class ="ranking-list">
-        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1135.png?v=8">Hayley Matthews</div><span id="player-info"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/64970.png"><p>505</p></span></li>
-        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1129.png?v=8">Amelia Kerr</div><span>434</span></li>
-        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8">Deepti Sharma</div><span>387</span></li>
-        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8">Ashleigh Gardner</div><span>372</span></li>
-        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1133.png?v=8">Chamari Athapaththu</div><span>361</span></li>
-    </ul>
+      <div class="ranking-header t20">T20 – ALLROUNDER RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/6.png?v=8" alt="">Saim Ayub</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/70241.png" alt="Saim"><p>269</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/10.png?v=8" alt="">Sikandar Raza</div><span>251</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/9.png?v=8" alt="">Roston Chase</div><span>241</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1188.png?v=8" alt="">Mohammad Nabi</div><span>217</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/4.png?v=8" alt="">Hardik Pandya</div><span>211</span></li>
+      </ul>
     </div>
-</div>
+  </div>
 
-<div class="ranking-container">
-    <button type="button" id="back" onclick="back()">Back >></button>
-    <button type="button" id="home" onclick="home()">Home</button>
-</div>
-<script>
-    function back() {
-        window.location.href = "Fixtures.html";
-      }
+  <!-- ===== WOMEN'S TEAM ===== -->
+  <h1>Women's Team Rankings</h1>
+  <div class="ranking-container">
+    <div class="ranking-card">
+      <div class="ranking-header odi">ODI – TEAM RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">AUSTRALIA</div><span>163</span></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8" alt="">ENGLAND</div><span>126</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8" alt="">INDIA</div><span>126</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8" alt="">SOUTH AFRICA</div><span>99</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1129.png?v=8" alt="">NEW ZEALAND</div><span>93</span></li>
+      </ul>
+    </div>
+    <div class="ranking-card">
+      <div class="ranking-header t20">T20 – TEAM RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">AUSTRALIA</div><span>299</span></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8" alt="">ENGLAND</div><span>277</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8" alt="">INDIA</div><span>263</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1129.png?v=8" alt="">NEW ZEALAND</div><span>253</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8" alt="">SOUTH AFRICA</div><span>241</span></li>
+      </ul>
+    </div>
+  </div>
 
-    function home(){
-        window.location.href="Mini-Project.html";
-    }
-</script>
+  <!-- ===== WOMEN'S BATTING ===== -->
+  <h1>Women's Batting Rankings</h1>
+  <div class="ranking-container">
+    <div class="ranking-card">
+      <div class="ranking-header odi">ODI – BATTING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8" alt="">Laura Wolvaardt</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/66176.png" alt="Laura"><p>814</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8" alt="">Smriti Mandhana</div><span>811</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Ashleigh Gardner</div><span>738</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8" alt="">Nat Sciver-Brunt</div><span>714</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Beth Mooney</div><span>700</span></li>
+      </ul>
+    </div>
+    <div class="ranking-card">
+      <div class="ranking-header t20">T20 – BATTING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Beth Mooney</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/64853.png" alt="Mooney"><p>794</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1135.png?v=8" alt="">Hayley Matthews</div><span>774</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8" alt="">Smriti Mandhana</div><span>767</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Tahlia McGrath</div><span>757</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8" alt="">Laura Wolvaardt</div><span>741</span></li>
+      </ul>
+    </div>
+  </div>
 
-      
+  <!-- ===== WOMEN'S BOWLING ===== -->
+  <h1>Women's Bowling Rankings</h1>
+  <div class="ranking-container">
+    <div class="ranking-card">
+      <div class="ranking-header odi">ODI – BOWLING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8" alt="">Sophie Ecclestone</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/66391.png" alt="Sophie"><p>747</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8" alt="">Marizanne Kapp</div><span>712</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Alana King</div><span>695</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Ashleigh Gardner</div><span>675</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8" alt="">Deepti Sharma</div><span>657</span></li>
+      </ul>
+    </div>
+    <div class="ranking-card">
+      <div class="ranking-header t20">T20 – BOWLING RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Annabel Sutherland</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/67045.png" alt="Annabel"><p>736</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8" alt="">Deepti Sharma</div><span>732</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1130.png?v=8" alt="">Sadia Iqbal</div><span>732</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8" alt="">Sophie Ecclestone</div><span>727</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1121.png?v=8" alt="">Lauren Bell</div><span>714</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== WOMEN'S ALLROUNDER ===== -->
+  <h1>Women's Allrounder Rankings</h1>
+  <div class="ranking-container">
+    <div class="ranking-card">
+      <div class="ranking-header odi">ODI – ALLROUNDER RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Ashleigh Gardner</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/67023.png" alt="Gardner"><p>498</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1131.png?v=8" alt="">Marizanne Kapp</div><span>441</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1135.png?v=8" alt="">Hayley Matthews</div><span>420</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8" alt="">Deepti Sharma</div><span>392</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Annabel Sutherland</div><span>388</span></li>
+      </ul>
+    </div>
+    <div class="ranking-card">
+      <div class="ranking-header t20">T20 – ALLROUNDER RANKINGS</div>
+      <ul class="ranking-list">
+        <li><div class="team-info"><span>01</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1135.png?v=8" alt="">Hayley Matthews</div><div class="player-photo"><img src="https://images.icc-cricket.com/icc-web/image/upload/t_player-headshot-portrait/prd/assets/players/generic/colored/64970.png" alt="Hayley"><p>505</p></div></li>
+        <li><div class="team-info"><span>02</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1129.png?v=8" alt="">Amelia Kerr</div><span>434</span></li>
+        <li><div class="team-info"><span>03</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1126.png?v=8" alt="">Deepti Sharma</div><span>387</span></li>
+        <li><div class="team-info"><span>04</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1119.png?v=8" alt="">Ashleigh Gardner</div><span>372</span></li>
+        <li><div class="team-info"><span>05</span><img src="https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/1133.png?v=8" alt="">Chamari Athapaththu</div><span>361</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer injected by navbar.js -->
+  <script src="navbar.js"></script>
 </body>
 </html>
