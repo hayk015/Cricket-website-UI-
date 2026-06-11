@@ -1,176 +1,142 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>SIGN IN</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: url("https://assets.khelnow.com/news/uploads/2025/03/A-general-view-of-the-Lords-Cricket-Ground-London-scaled.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #333;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Hub – Sign In</title>
+  <link rel="stylesheet" href="mini.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url("https://assets.khelnow.com/news/uploads/2025/03/A-general-view-of-the-Lords-Cricket-Ground-London-scaled.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      padding: 30px 16px;
+    }
+    form {
+      background-color: #fff;
+      padding: 28px 32px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      width: 280px;
+      text-align: center;
+    }
+    h1 { margin-bottom: 20px; color: #4a148c; font-size: 22px; }
+    h3 { color: #4a148c; font-size: 14px; margin: 14px 0 6px; }
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 4px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    input[type="checkbox"] { margin-right: 6px; }
+    .remember-row { text-align: left; margin-bottom: 14px; font-size: 13px; }
+    button.submit-btn {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      background-color: #4a148c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button.submit-btn:hover { background-color: #6a1b9a; }
+    a.form-link {
+      display: block;
+      margin: 6px 0;
+      color: #4a148c;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    a.form-link:hover { text-decoration: underline; }
+    .social-buttons button {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .social-buttons button:hover { background-color: #0022cc; }
+    .divider { font-size: 11px; color: #888; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <!-- Navbar injected by navbar.js -->
 
-      form {
-        background-color: #fff;
-        margin:fixed;
-        height:fit-content;
-        padding: 25px 30px;
-        border-radius: 10px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        margin-top: 100px;
-        margin-bottom:100px;
-        width: 250px;
-        text-align: center;
-      }
-
-      h1 {
-        margin-bottom: 20px;
-        color: #4a148c;
-      }
-
-      label {
-        display: block;
-        text-align: left;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-
-      input[type="text"],
-      input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 14px;
-      }
-
-      input[type="checkbox"] {
-        margin-right: 8px;
-      }
-
-      button {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        background-color: #4a148c;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-
-      button:hover {
-        background-color: #6a1b9a;
-      }
-
-      a {
-        display: block;
-        margin: 10px 0;
-        color: #4a148c;
-        text-decoration: none;
-        font-size: 14px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .social-buttons button {
-        background-color: darkblue;
-        color: #ccc;
-        margin-top: 8px;
-      }
-
-      .social-buttons button:hover {
-        background-color: blue;
-      }
-      span {
-        color: white;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <form name="userForm" onsubmit="return validateForm()">
+  <div class="form-wrapper">
+    <form name="userForm" onsubmit="return validateForm(event)">
       <h1>SIGN IN</h1>
+
       <label for="email">Email:</label>
-      <input
-        type="text"
-        id="email"
-        placeholder="Enter your Email ..."
-        required
-      />
+      <input type="text" id="email" placeholder="Enter your Email…" required />
 
       <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        placeholder="Enter your Password ..."
-        required
-      />
+      <input type="password" id="password" placeholder="Enter your Password…" required />
 
-      <h3>Log in or create an Account</h3>
-      <a href="forgot.html">Forgot password?</a>
-      <label><input type="checkbox" /> Remember me</label>
+      <div class="remember-row">
+        <label><input type="checkbox" id="rememberMe" /> Remember me</label>
+      </div>
 
-      <button type="submit">Sign In</a>
-      </button>
+      <a href="forgot.html" class="form-link">Forgot password?</a>
+      <a href="Register.html" class="form-link">Don't have an account? Register</a>
 
-      <h3>Sign in with other social media account</h3>
+      <button type="submit" class="submit-btn">Sign In</button>
+
+      <div class="divider">— or sign in with —</div>
       <div class="social-buttons">
-        <button type="button" id="social-buttons">
-          <a href="https://accounts.google.com/signin"
-            ><span id="google">Google</span></a
-          >
-        </button>
-        <button type="button" id="social-buttons">
-          <a href="https://www.facebook.com/login"
-            ><span id="Facebook">Facebook</span></a
-          >
-        </button>
-        <button type="button" id="social-buttons">
-          <a href="https://www.instagram.com/accounts/login"
-            ><span id="Instagram">Instagram</span></a
-          >
-        </button>
+        <button type="button" onclick="window.open('https://accounts.google.com/signin','_blank')">Google</button>
+        <button type="button" onclick="window.open('https://www.facebook.com/login','_blank')">Facebook</button>
+        <button type="button" onclick="window.open('https://www.instagram.com/accounts/login','_blank')">Instagram</button>
       </div>
     </form>
+  </div>
 
-    <script>
-      function validateForm() {
-        event.preventDefault();
-        const pass = document.forms["userForm"]["password"].value.trim();
-        const email = document.forms["userForm"]["email"].value.trim();
+  <!-- Footer injected by navbar.js -->
+  <script src="navbar.js"></script>
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const pass = document.getElementById('password').value.trim();
 
-        if (email === "" || pass === "") {
-          alert("Email must be filled out");
-          return false;
-        }
+      if (!email) { alert('Please enter your email.'); return false; }
+      if (!email.includes('@')) { alert("Email must contain '@'."); return false; }
+      if (!pass) { alert('Please enter your password.'); return false; }
 
-        if (pass === "") {
-          alert("Password must be filled out");
-          return false;
-        }
-
-        if (!email.includes("@")) {
-          alert("Email must contain '@'.");
-          return false;
-        }
-
-        window.location.href = "Mini-Project.html";
-        return true;
-      }
-    </script>
-  </body>
+      // Demo: any valid email + any non-empty password signs in
+      alert('Signed in successfully! Welcome back.');
+      window.location.href = 'Mini-Project.html';
+      return true;
+    }
+  </script>
+</body>
 </html>

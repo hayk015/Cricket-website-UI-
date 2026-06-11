@@ -1,110 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Forgot Password</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Hub – Forgot Password</title>
+  <link rel="stylesheet" href="mini.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
       background: url("https://assets.khelnow.com/news/uploads/2025/03/A-general-view-of-the-Lords-Cricket-Ground-London-scaled.jpg");
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
       background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .form-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: auto;
-      color: #333;
+      flex: 1;
+      padding: 40px 16px;
     }
-
-    .container {
-      background-color: #fff;
-      margin-top:200px;
-      padding: 25px 30px;
+    form {
+      background: white;
+      padding: 30px 32px;
       border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-      width: 350px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      width: 300px;
       text-align: center;
     }
-
-    h1 {
-      margin-bottom: 20px;
-      color: #4a148c;
-    }
-
-    label {
-      display: block;
-      text-align: left;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    input[type="email"] {
+    h1 { color: #4a148c; font-size: 22px; margin-bottom: 10px; }
+    p.hint { font-size: 13px; color: #555; margin-bottom: 18px; }
+    label { display: block; text-align: left; font-weight: bold; font-size: 13px; margin-bottom: 4px; }
+    input[type="text"] {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 14px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
     }
-
-    button {
+    button.submit-btn {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
-      background-color: #4a148c;
+      background: #4a148c;
       color: white;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
+      font-size: 15px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      margin-bottom: 12px;
     }
-
-    button:hover {
-      background-color: #6a1b9a;
-    }
-
-    a {
-      display: block;
-      margin-top: 10px;
-      color: #4a148c;
-      text-decoration: none;
+    button.submit-btn:hover { background: #6a1b9a; }
+    a.form-link { color: #4a148c; font-size: 13px; text-decoration: none; }
+    a.form-link:hover { text-decoration: underline; }
+    .success-msg {
+      display: none;
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      color: #2e7d32;
+      padding: 12px;
+      border-radius: 6px;
       font-size: 14px;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      margin-bottom: 12px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Forgot Password</h1>
-    <p>Enter your registered email to reset your password.</p>
-    <form onsubmit="return resetPassword(event)">
-      <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Enter your Email ..." required>
-      <button type="submit">Send Reset Link</button>
+  <!-- Navbar injected by navbar.js -->
+
+  <div class="form-wrapper">
+    <form onsubmit="return handleReset(event)">
+      <h1>Forgot Password</h1>
+      <p class="hint">Enter your registered email address and we'll send you a password reset link.</p>
+
+      <div class="success-msg" id="successMsg">
+        ✅ A password reset link has been sent to your email. Please check your inbox.<br/>
+        <small>(This is a demo — no actual email is sent.)</small>
+      </div>
+
+      <label for="resetEmail">Email Address:</label>
+      <input type="text" id="resetEmail" placeholder="Enter your email…" required />
+
+      <button type="submit" class="submit-btn">Send Reset Link</button>
+      <a href="Signin.html" class="form-link">← Back to Sign In</a>
     </form>
-    Back to Sign In</a>
   </div>
 
+  <!-- Footer injected by navbar.js -->
+  <script src="navbar.js"></script>
   <script>
-    function resetPassword(event) {
-      event.preventDefault();
-      const email = document.getElementById("email").value.trim();
-
-      if (!email.includes("@")) {
-        alert("Please enter a valid email address.");
+    function handleReset(e) {
+      e.preventDefault();
+      const email = document.getElementById('resetEmail').value.trim();
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
         return false;
       }
-      alert("Password reset link sent to " + email);
-
-      document.getElementById("email").value = "";
-
-        window.location.href = "Signin.html";
-      return true;
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('resetEmail').value = '';
+      return false;
     }
   </script>
 </body>
